@@ -11,7 +11,7 @@ Dado um conjunto de matérias-primas disponíveis em estoque, o sistema analisa 
 Matéria-Prima:
 - id (UUID)
 - nome
-- quantidadeEmEstoque
+- quantidadeEmEstoque  
 Produto:
 - id (UUID)
 - nome
