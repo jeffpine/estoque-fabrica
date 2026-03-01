@@ -26,6 +26,7 @@ CRUD Matéria-Prima:
 - GET /materias-primas
 - PUT /materias-primas/{id}
 - DELETE /materias-primas/{id}
+  
 CRUD Produto:
 - POST /produtos
 - GET /produtos
@@ -33,6 +34,7 @@ CRUD Produto:
 ## ■ Otimização de Produção
 Endpoint:
 GET /producao/otimizar
+
 Estratégia:
 1. Ordena produtos por maior valor
 2. Calcula o máximo de unidades possíveis por gargalo de matéria-prima
