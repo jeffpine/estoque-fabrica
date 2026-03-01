@@ -1,6 +1,7 @@
 package com.pinheiro.estoque_fabrica.controller;
 import com.pinheiro.estoque_fabrica.dto.PlanoProducaoDTO;
 import com.pinheiro.estoque_fabrica.service.OtimizacaoProducaoService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
