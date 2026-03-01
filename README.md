@@ -25,14 +25,13 @@ CRUD Matéria-Prima:
 - POST /materias-primas
 - GET /materias-primas
 - PUT /materias-primas/{id}
-- DELETE /materias-primas/{id}
-  
+- DELETE /materias-primas/{id}  
 CRUD Produto:
 - POST /produtos
 - GET /produtos
 - DELETE /produtos/{id}
 ## ■ Otimização de Produção
-Endpoint:
+Endpoint:  
 GET /producao/otimizar
 
 Estratégia:
@@ -53,16 +52,16 @@ Exemplo de resposta:
 - Validação de priorização por maior valor
 - Uso de JUnit 5 + Mockito
 ## ■■ Como Executar
-1. Criar banco:
+1. Criar banco:  
 CREATE DATABASE estoqueMP;
 2. Configurar application.yml
-3. Executar:
+3. Executar:  
 ./mvnw spring-boot:run
 ## ■ Estrutura do Projeto
-controller
-service
-repository
-entity
-dto
+controller  
+service  
+repository  
+entity  
+dto  
 ## ■■■ Autor
 Jeferson Pinheiro de Jesus
