@@ -23,16 +23,17 @@ Matéria-Prima 1:N ProdutoMateriaPrima
 ## ■■ Funcionalidades
 CRUD Matéria-Prima:
 - POST /materias-primas
-- GET /materias-primas
-- PUT /materias-primas/{id}
-- DELETE /materias-primas/{id}  
+- GET /materias-primas  
 CRUD Produto:
 - POST /produtos
 - GET /produtos
-- DELETE /produtos/{id}
+- PUT /produtos
+- DELETE /produtos/deletar/{nome}
 ## ■ Otimização de Produção
 Endpoint:  
-GET /producao/otimizar
+GET /producao/otimizar  
+POST /producao/manual
+
 
 Estratégia:
 1. Ordena produtos por maior valor
@@ -61,7 +62,9 @@ CREATE DATABASE estoqueMP;
 controller  
 service  
 repository  
-entity  
+domain  
 dto  
+config  
+exception  
 ## ■■■ Autor
 Jeferson Pinheiro de Jesus
