@@ -28,16 +28,22 @@ public class ProdutoService {
     public ProdutoResponseDTO criar(CriarProdutoDTO dto) {
 
         Produto produto = new Produto();
-        produto.setNome(dto.nome());
+        produto.setNome(dto.nome().trim().toLowerCase());
         produto.setValor(dto.valor());
+
+        if (produtoRepository.existsByNomeIgnoreCase((produto.getNome()))) {
+            throw new RuntimeException("Produto já cadastrado");
+        }
 
         List<ProdutoMateriaPrima> composicao = dto.composicao()
                 .stream()
                 .map(item -> {
 
                     MateriaPrima materia = materiaPrimaRepository
-                            .findById(item.materiaPrimaId())
-                            .orElseThrow();
+                            .findByNomeIgnoreCase(item.materiaPrimaNome())
+                            .stream()
+                            .findFirst()
+                            .orElseThrow(() -> new RuntimeException("Matéria prima não encontrada"));
 
                     ProdutoMateriaPrima pm = new ProdutoMateriaPrima();
                     pm.setProduto(produto);
@@ -68,13 +74,31 @@ public class ProdutoService {
                         p.getValor(),
                         p.getComposicao().stream()
                                 .map(c -> new ItemComposicaoDTO(
-                                        c.getMateriaPrima().getId(),
+                                        c.getMateriaPrima().getNome(),
                                         c.getQuantidadeNecessaria()))
                                 .toList()))
                 .toList();
     }
+    public Produto atualizar(Produto produto){
 
-    public void deletar(UUID id) {
-        produtoRepository.deleteById(id);
+        Produto existente = produtoRepository
+                .findByNomeIgnoreCase(produto.getNome())
+                .orElseThrow();
+
+        existente.setValor(produto.getValor());
+
+        return produtoRepository.save(existente);
+    }
+
+    public void deletarProduto(String nome){
+
+        String nomeNormalizado = nome.trim().toLowerCase();
+
+        Produto produto = produtoRepository
+                .findByNomeIgnoreCase(nomeNormalizado)
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+
+        produtoRepository.delete(produto);
+
     }
 }
