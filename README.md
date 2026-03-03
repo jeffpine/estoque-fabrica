@@ -62,9 +62,9 @@ CREATE DATABASE estoqueMP;
 controller  
 service  
 repository  
-domain 
-dto
-config
-exception
+domain  
+dto  
+config  
+exception  
 ## ■■■ Autor
 Jeferson Pinheiro de Jesus
