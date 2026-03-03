@@ -67,7 +67,7 @@ API disponível em: http://localhost:8080
 
 ## Como Executar o Frontend
 
-npm install
+npm install  
 npm run dev
 
 Frontend disponível em: http://localhost:5173
