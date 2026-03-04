@@ -6,7 +6,6 @@ import com.pinheiro.estoque_fabrica.service.ProdutoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/produtos")
@@ -29,8 +28,7 @@ public class ProdutoController {
     }
 
     @PutMapping
-    public Produto atualizar(
-            @RequestBody Produto produto){
+    public Produto atualizar(@RequestBody Produto produto) {
         return service.atualizar(produto);
     }
 

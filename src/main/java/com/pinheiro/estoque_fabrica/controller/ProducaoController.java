@@ -13,14 +13,14 @@ public class ProducaoController {
     public ProducaoController(OtimizacaoProducaoService service) {
         this.service = service;
     }
-    @GetMapping("/otimizar")
-    public PlanoProducaoDTO otimizar() {
+
+    @GetMapping("/optimizar")
+    public PlanoProducaoDTO optimizar() {
         return service.otimizarProducao();
     }
 
     @PostMapping("/manual")
-    public PlanoProducaoDTO planoManual(@RequestBody PlanoProducaoManualDTO dto){
+    public PlanoProducaoDTO planoManual(@RequestBody PlanoProducaoManualDTO dto) {
         return service.calcularPlanoManual(dto);
     }
-
 }

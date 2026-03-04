@@ -1,7 +1,7 @@
 package com.pinheiro.estoque_fabrica.service;
 
-import com.pinheiro.estoque_fabrica.domain.MateriaPrima;
 import com.pinheiro.estoque_fabrica.domain.Produto;
+import com.pinheiro.estoque_fabrica.domain.MateriaPrima;
 import com.pinheiro.estoque_fabrica.domain.ProdutoMateriaPrima;
 import com.pinheiro.estoque_fabrica.repository.MateriaPrimaRepository;
 import com.pinheiro.estoque_fabrica.repository.ProdutoRepository;

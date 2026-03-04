@@ -1,7 +1,5 @@
 package com.pinheiro.estoque_fabrica.domain;
-
 import jakarta.persistence.*;
-
 import java.util.List;
 import java.util.UUID;
 

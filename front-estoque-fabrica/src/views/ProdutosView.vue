@@ -3,7 +3,7 @@
 import {ref,onMounted} from "vue"
 import {api} from "../api/http"
 
-const produtos = ref([])
+const products = ref([])
 const materias = ref([])
 
 const nome = ref("")
@@ -23,7 +23,7 @@ const composicao = ref([
 
 async function carregarProdutos(){
  const response = await api.get("/produtos")
- produtos.value=response.data
+ products.value=response.data
 }
 
 async function carregarMaterias(){
@@ -201,7 +201,7 @@ Criar Produto
 <tbody>
 
 <tr
-v-for="p in produtos"
+v-for="p in products"
 :key="p.nome"
 class="border-t"
 >

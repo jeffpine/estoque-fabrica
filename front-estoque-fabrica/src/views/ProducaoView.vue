@@ -13,7 +13,7 @@ async function otimizar(){
 
 }
 
-const produtos = ref([])
+const products = ref([])
 const produtoSelecionado = ref("")
 const quantidade = ref(1)
 
@@ -23,7 +23,7 @@ async function carregarProdutos(){
 
  const response = await api.get("/produtos")
 
- produtos.value = response.data
+ products.value = response.data
 
 }
 
@@ -68,7 +68,7 @@ Selecione produto
 </option>
 
 <option
-v-for="p in produtos"
+v-for="p in products"
 :key="p.id"
 :value="p.nome"
 >
