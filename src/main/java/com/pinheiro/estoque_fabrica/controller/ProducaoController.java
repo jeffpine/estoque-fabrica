@@ -14,8 +14,8 @@ public class ProducaoController {
         this.service = service;
     }
 
-    @GetMapping("/optimizar")
-    public PlanoProducaoDTO optimizar() {
+    @GetMapping("/otimizar")
+    public PlanoProducaoDTO otimizar() {
         return service.otimizarProducao();
     }
 
